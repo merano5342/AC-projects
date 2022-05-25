@@ -497,6 +497,17 @@ header {
   }
 }
 
+
+
 html {
   scroll-behavior: smooth;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  background-color: #595959;
+  padding: 1rem;
+  color: #fff;
+  letter-spacing: 2px;
 }
