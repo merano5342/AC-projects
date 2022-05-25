@@ -363,17 +363,15 @@ header {
 /* Adoption */
 
 .adoption-wrapper {
-  border-radius: 1rem;
+
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 135px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+
   width: 100%;
 
   background-color: #fff;
-
+  border-radius: 1rem;
   -webkit-box-shadow: 2px 10px 12px 0px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 2px 10px 12px 0px rgba(0, 0, 0, 0.1);
   box-shadow: 2px 10px 12px 0px rgba(0, 0, 0, 0.1);
@@ -478,11 +476,16 @@ header {
   .adoption-wrapper {
     grid-template-columns: auto minmax(230px, 1fr);
     grid-template-rows: auto;
+
     grid-gap: 1rem;
   }
 
   .adoption-image {
     border-bottom-left-radius: 1rem;
+  }
+
+  .adoption-info {
+    justify-items: start;
   }
 
   .adoption-info .title {
@@ -492,4 +495,8 @@ header {
   .adoption-info .description {
     font-size: 1.2rem;
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
