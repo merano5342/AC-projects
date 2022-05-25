@@ -332,7 +332,7 @@ header {
 
 .album-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   width: 100%;
   grid-gap: 1rem;
 }
@@ -342,6 +342,7 @@ header {
   background-color: #595959;
   overflow: hidden;
   position: relative;
+
   -webkit-box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.08);
   -moz-box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.08);
   box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.08);
@@ -351,24 +352,23 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* aspect-ratio: 1.6; */
 }
 
 .card-text {
   position: absolute;
-
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 30px;
   color: #fff;
+
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column;
 
   opacity: 0;
+  transition: opacity 0.3s ease-out;
 }
 
 .card-text>h3 {
@@ -383,8 +383,8 @@ header {
 
 .card-text::before,
 .card-text::after {
-  content: "";
   position: absolute;
+  content: "";
   top: 40px;
   bottom: 40px;
   left: 40px;
@@ -399,7 +399,6 @@ header {
 }
 
 .card-text::after {
-
   border-left: .3px solid #fff;
   border-right: .3px solid #fff;
   transform: scale(1, 0);
@@ -419,7 +418,6 @@ header {
 
 
 .card:hover .card-img {
-  cursor: pointer;
   opacity: 0.7;
   transition: 0.3s;
 }
@@ -427,19 +425,4 @@ header {
 .card:hover .card-text {
   opacity: 100%;
   transition: 0.3s;
-}
-
-@media screen and (min-width: 768px) {
-  .album-wrapper {
-    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-    grid-gap: 1rem;
-  }
-
-  .card-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* aspect-ratio: 1; */
-  }
-
 }
