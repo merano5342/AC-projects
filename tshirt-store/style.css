@@ -121,19 +121,132 @@ i {
   right: 10px;
 }
 
-@media screen and (min-width : 768px) {
+/* shopping */
+#shopping {
+  padding-top: 90px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.shopping-title {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+
+/* .option-box {
+  width: 600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fix, minmax(160px, 1fr));
+  grid-template-rows: 1fr;
+  grid-gap: 8px;
+} */
+
+.option-box {
+  width: 500px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr repeat(3, minmax(160px, auto)) 1fr;
+  grid-gap: 8px;
+}
+
+.option-box .size {
+  grid-column: 2 / 3;
+}
+
+
+.option-item {
+  min-width: 160px;
+  font-size: 14px;
+  /* margin: 10px; */
+  padding: 10px;
+  border: .2px #000 solid;
+  border-radius: 5px;
+}
+
+/* card */
+.shopping-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  grid-gap: 1rem;
+
+}
+
+.card {
+  position: relative;
+  text-align: center;
+  border: 1px #000 solid;
+
+}
+
+.card-info h3 {
+  font-size: 14px;
+  font-weight: 400;
+  padding-bottom: 6px;
+  padding-top: 10px;
+}
+
+
+.card-heart {
+  position: absolute;
+  background-color: #fff;
+  z-index: 999;
+  border-radius: 100%;
+  top: 10px;
+  right: 10px;
+
+}
+
+.card-heart .fa-heart {
+  font-size: 18px;
+  padding-top: 2px;
+}
+
+.card-img-box {
+  position: relative;
+  overflow: hidden;
+  /* max-width: 600px; */
+}
+
+.card:hover .card-img-hover {
+  opacity: 100%;
+}
+
+.card-img {
+  width: 100%;
+  height: auto;
+}
+
+.card-img-hover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity .2s ease-in-out;
+}
+
+/* @media screen and (max-width: 450px) {
+
+} */
+/* for computers */
+
+@media screen and (min-width : 945px) {
   #nav {
     height: 70px;
-
   }
-
 
   .nav-icons-left,
   .nav-icons-right {
     display: inline;
     position: static;
   }
-
 
   .nav-logo {
     left: 140px;
@@ -144,7 +257,6 @@ i {
     font-size: 26px;
     line-height: 60px;
   }
-
 
   .nav-icons {
     position: absolute;
@@ -168,5 +280,13 @@ i {
     min-width: 100px;
     font-size: 26px;
     margin: 14px;
+  }
+
+  /* shopping */
+  .shopping-container {
+
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1.5rem;
+
   }
 }
