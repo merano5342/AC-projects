@@ -11,7 +11,6 @@ body {
   width: 100%;
   height: 100%;
   margin: 0;
-
 }
 
 
@@ -39,13 +38,6 @@ a {
   text-decoration: none;
   /* 拿掉底線 */
 }
-
-
-/* 設定區塊寬度一致並置中 */
-/* .container {
-  width: 85%;
-  margin: 0 auto 3rem auto;
-} */
 
 
 /* reset default --- end */
@@ -91,6 +83,11 @@ h3 {
   position: absolute;
 }
 
+.logo-r {
+  font-size: 10px;
+  margin: 0 0 18px 2px;
+}
+
 .nav-logo {
   display: flex;
   align-items: center;
@@ -119,7 +116,7 @@ h3 {
 
 .nav-icons i {
   font-size: 26px;
-  margin: 14px;
+  margin: 12px;
 }
 
 .nav-icons-left {
@@ -129,6 +126,9 @@ h3 {
 .nav-icons-right {
   right: 10px;
 }
+
+
+
 
 /* --------- shopping --------- */
 #shopping {
@@ -143,36 +143,56 @@ h3 {
 }
 
 .option-box {
-  /* width: 500px; */
+  max-width: 85%;
   margin: 0 auto;
-  display: grid;
+  display: flex;
   flex-flow: row wrap;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr repeat(3, minmax(160px, auto)) 1fr;
-  grid-gap: 8px;
-}
-
-.option-box .size {
-  grid-column: 2 / 3;
+  justify-content: center;
 }
 
 .option-item {
-  min-width: 160px;
-  font-size: 14px;
-  /* margin: 10px; */
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  max-width: 200px;
+  min-width: 140px;
+
+  margin: 6px;
   padding: 10px;
   border: .2px #000 solid;
   border-radius: 5px;
+
+  font-size: 14px;
+}
+
+.option-item p {
+  margin-left: 10px;
+}
+
+.arrow {
+  border: 1.8px solid #000;
+  width: 10px;
+  height: 10px;
+  border-left: none;
+  border-bottom: none;
+  transform: rotate(135deg);
+  z-index: 999;
+  margin-right: 6px;
+}
+
+.option-item:hover {
+  cursor: pointer;
 }
 
 /* --------- card --------- */
 .shopping-container {
   max-width: 1400px;
-  margin: 0 auto;
-  padding-top: 30px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   grid-gap: 1rem;
+
+  margin: 0 auto;
+  padding-top: 30px;
 }
 
 .card {
@@ -182,17 +202,16 @@ h3 {
 
 .card-heart {
   position: absolute;
+  top: 10px;
+  right: 10px;
   background-color: #fff;
   z-index: 10;
   border-radius: 100%;
-  top: 10px;
-  right: 10px;
-
 }
 
 .card-heart .fa-heart {
-  font-size: 16px;
   padding: 10px;
+  font-size: 16px;
 }
 
 .card-img-box {
@@ -204,7 +223,8 @@ h3 {
   opacity: 100%;
 }
 
-.card-img {
+.card-img,
+.card-img-hover {
   width: 100%;
   height: auto;
 }
@@ -213,8 +233,6 @@ h3 {
   position: absolute;
   top: 0;
   right: 0;
-  width: 100%;
-  height: auto;
   opacity: 0;
   transition: opacity .2s ease-in-out;
 }
@@ -304,9 +322,11 @@ input[type=submit] {
 
 
 
-/* ////////// for computers ////////// */
+/* ////////// for computer screen ////////// */
 
 @media screen and (min-width : 945px) {
+
+  /* --------- navber --------- */
   #nav {
     height: 70px;
   }
@@ -351,18 +371,27 @@ input[type=submit] {
     margin: 14px;
   }
 
-  /* shopping */
+  /* --------- shopping --------- */
   .shopping-container {
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 1.5rem;
   }
 
-  /* card */
+  /* --------- card --------- */
   .card-heart .fa-heart {
     font-size: 22px;
   }
 
   /* --------- news letter --------- */
+  .banner-img img {
+    width: 100%;
+    max-height: 400px;
+  }
+
+  .banner-info {
+    padding-top: 5%;
+  }
+
   input[type=text],
   input[type=submit] {
     font-size: 16px;
@@ -374,13 +403,5 @@ input[type=submit] {
 
   input[type=text] {
     padding: 14px 90px;
-  }
-
-  .banner-img img {
-    max-height: 320px;
-  }
-
-  .banner-info {
-    padding-top: 70px;
   }
 }
