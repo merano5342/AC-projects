@@ -259,11 +259,12 @@ h3 {
 
 .banner-img {
   display: flex;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .banner-img img {
   max-height: 260px;
-  margin: 0 auto;
 }
 
 .banner-info {
@@ -286,7 +287,6 @@ h3 {
   text-decoration: underline;
   font-weight: 400;
 }
-
 
 
 input[type=text],
@@ -319,8 +319,39 @@ input[type=submit] {
 
 }
 
+/* ////////// for small screen ////////// */
 
+@media screen and (max-width: 420px) {
+  .logo-text {
+    padding-left: 8px;
+    font-size: 16px;
+    line-height: 20px;
+  }
 
+  .logo-icon {
+    max-width: 24px;
+    height: auto;
+  }
+
+  .nav-icons {
+    top: 20px;
+  }
+
+  .nav-icons-left {
+    top: 13px;
+    left: 10px;
+  }
+
+  .nav-icons-right {
+    top: 13px;
+    right: 10px;
+  }
+
+  .nav-icons i {
+    font-size: 20px;
+    margin: 6px;
+  }
+}
 
 /* ////////// for computer screen ////////// */
 
