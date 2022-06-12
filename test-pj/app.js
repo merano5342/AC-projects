@@ -17,8 +17,9 @@ app.get('/', (req, res) => {
 
 app.get('/:page_name', (req, res) => {
   const pageList = ['About', 'Portfolio', 'Contact']
-  const page = pageList.find(page => page.toLowerCase() === req.params.page_name)
-  res.render('index', { page: page })
+  const pageName = req.params.page_name
+  const page = pageList.find(page => page.toLowerCase() === pageName)
+  res.render(`${pageName}`, { page: page })
 })
 
 // 優化前
